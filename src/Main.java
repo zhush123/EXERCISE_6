@@ -9,9 +9,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        primaryStage.setTitle("WaterApp");
-        primaryStage.setScene(new Scene(root, 300, 500));
+        Parent root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        
+        primaryStage.setTitle("WaterFlow");
+        primaryStage.setScene(new Scene(root, 470, 700));
         primaryStage.show();
     }
 

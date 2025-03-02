@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainMenuController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="470.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Users/howar/Downloads/MainMenu%20(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="orderbutton" layoutX="113.0" layoutY="375.0" mnemonicParsing="false" onAction="#OrderHandler" prefHeight="44.0" prefWidth="255.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="accountbutton" layoutX="113.0" layoutY="441.0" mnemonicParsing="false" onAction="#AccountButtonHandler" prefHeight="44.0" prefWidth="255.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="logoutbutton" layoutX="113.0" layoutY="507.0" mnemonicParsing="false" onAction="#LogOutButtonHandler" prefHeight="44.0" prefWidth="255.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="adminbutton" layoutX="350.0" layoutY="91.0" mnemonicParsing="false" onAction="#AdminButtonHandler" prefHeight="16.0" prefWidth="78.0" style="-fx-background-color: transparent;" />
+   </children>
+</AnchorPane>

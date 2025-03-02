@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="296.0" style="-fx-background-color: #97B2D3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userAccountController">
+   <children>
+      <AnchorPane layoutY="14.0" onDragDetected="#editprofileHandler" prefHeight="81.0" prefWidth="296.0" style="-fx-background-color: #316cab;">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Greetings!">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="usernamelabel1" fill="WHITE" layoutX="58.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <AnchorPane layoutX="12.0" layoutY="110.0" prefHeight="223.0" prefWidth="272.0" style="-fx-background-color: #FFFF;">
+         <children>
+            <AnchorPane layoutY="103.0" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: #D3D3D3;">
+               <children>
+                  <Text layoutX="22.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number:" />
+                  <Text fx:id="contactlabel" layoutX="146.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="65.0" prefHeight="24.0" prefWidth="272.0" style="-fx-background-color: #D3D3D3;">
+               <children>
+                  <Text layoutX="22.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City:" />
+                  <Text fx:id="citylabel" layoutX="147.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City:" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="27.0" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: #D3D3D3;">
+               <children>
+                  <Text layoutX="21.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+                  <Text fx:id="usernamelabel" layoutX="145.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+               </children>
+            </AnchorPane>
+            <Text layoutX="22.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Details" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="12.0" layoutY="373.0" prefHeight="81.0" prefWidth="272.0" style="-fx-background-color: #FFFF;">
+         <children>
+            <Button fx:id="returnbutton" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#returnbuttonHandler" prefHeight="25.0" prefWidth="100.0" text="Home" />
+            <Button fx:id="editprofile" layoutX="158.0" layoutY="28.0" mnemonicParsing="false" onAction="#editprofileHandler" prefHeight="25.0" prefWidth="100.0" text="Edit Profile" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="296.0" style="-fx-background-color: #97B2D3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserEditController">
+   <children>
+      <AnchorPane layoutY="21.0" prefHeight="68.0" prefWidth="296.0" style="-fx-background-color: #316cab;">
+         <children>
+            <Button fx:id="returnbutton" layoutX="214.0" layoutY="22.0" mnemonicParsing="false" onAction="#returnbuttonHandler" prefHeight="25.0" prefWidth="62.0" text="Done" />
+            <Text fill="WHITE" layoutX="27.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Update" wrappingWidth="196.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="12.0" layoutY="110.0" prefHeight="223.0" prefWidth="272.0" style="-fx-background-color: #FFFF;">
+         <children>
+            <Text layoutX="23.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City:" />
+            <Text layoutX="23.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Password" />
+            <Text layoutX="23.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" />
+            <TextField fx:id="nametextfield" layoutX="133.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" promptText="username" />
+            <TextField fx:id="contacttextfield" layoutX="133.0" layoutY="137.0" prefHeight="25.0" prefWidth="119.0" promptText="It must be 11 digits" />
+            <Text layoutX="23.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number:" />
+            <TextField fx:id="passwordtextfield" layoutX="133.0" layoutY="61.0" prefHeight="25.0" prefWidth="119.0" promptText="password" />
+            <TextField fx:id="addresstextfield" layoutX="133.0" layoutY="99.0" prefHeight="25.0" prefWidth="119.0" promptText="city" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="12.0" layoutY="371.0" prefHeight="81.0" prefWidth="272.0" style="-fx-background-color: #FFFF;">
+         <children>
+            <Button fx:id="btndelete" layoutX="150.0" layoutY="28.0" mnemonicParsing="false" onAction="#returnbuttonHandler" prefHeight="25.0" prefWidth="100.0" text="Delete Account" />
+            <Button fx:id="btnupdate" layoutX="26.0" layoutY="28.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="100.0" text="Update" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

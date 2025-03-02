@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart.Data;
 import javafx.scene.control.Alert;
@@ -27,6 +28,8 @@ public class HomeController {
 
     ObservableList<User> userlist = FXCollections.observableArrayList();
 
+    
+
     @FXML
     private Label homelabel;
 
@@ -43,6 +46,12 @@ public class HomeController {
     private TableColumn<User, String> usernamecol;
 
     @FXML
+    private TableColumn<User, String> citycol;
+
+    @FXML
+    private TableColumn<User, String> contactcol;
+
+    @FXML
     private TableColumn<User, String> accountcreatedcol;
 
     @FXML
@@ -55,14 +64,35 @@ public class HomeController {
     private Button btnupdate;
 
     @FXML
+    private Button btnstock;
+
+    @FXML
     private TextField nametextfield;
 
     @FXML
     private TextField passwordtextfield;
 
+    @FXML
+    private TextField addressTextfield;
+    
+    @FXML
+    private TextField contactTextfield;
+
+    @FXML
+    private Button returnbutton;
+
+    public void returnbuttonHandler(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) returnbutton.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
 
     public void displayName(String username){
-
         homelabel.setText("Admin " + username);
         initializeCol();
         displayUsers();
@@ -74,16 +104,14 @@ public class HomeController {
         idcol.setCellValueFactory(new PropertyValueFactory<>("id"));
         usernamecol.setCellValueFactory(new PropertyValueFactory<>("username"));
         passwordcol.setCellValueFactory(new PropertyValueFactory<>("password"));
+        citycol.setCellValueFactory(new PropertyValueFactory<>("city"));
+        contactcol.setCellValueFactory(new PropertyValueFactory<>("contact"));
         accountcreatedcol.setCellValueFactory(new PropertyValueFactory<>("accountcreated"));
-
     }
 
     private void displayUsers(){
-
         userlist.clear();
 
-
-        // Return a set of Users from the database
         ResultSet result = DatabaseHandler.getUsers();
 
         try {
@@ -91,10 +119,12 @@ public class HomeController {
                 String id = result.getString("id");
                 String username = result.getString("username");
                 String password = result.getString("password");
+                String city = result.getString("city");
+                String contact = result.getString("contact");
                 String accountcreated = result.getString("accountcreated");
                 
                 //Create new user instance
-                User newuser = new User(id, username, password, accountcreated);
+                User newuser = new User(id, username, password, city, contact, accountcreated);
 
                 //Add to array list
                 userlist.add(newuser);
@@ -112,14 +142,20 @@ public class HomeController {
 
         String username = nametextfield.getText();
         String password = passwordtextfield.getText();
+        String city = addressTextfield.getText();
+        String contact = contactTextfield.getText();
         
         username = username.trim();
         password = password.trim();
+        city = city.trim();
+        contact = contact.trim();
 
         if(username.length() == 0) {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setContentText("Empty username");
         alert.showAndWait();
+        return;
+        
 
         }
 
@@ -127,9 +163,27 @@ public class HomeController {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setContentText("Empty password");
         alert.showAndWait();
+        return;
 
         }
-        User user = new User("",username, password, "");
+
+        if (city.length() == 0) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setContentText("Empty city");
+            alert.showAndWait();
+            return;
+    
+            }
+
+            if (contact.length() == 0) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setContentText("Contact is Empty");
+                alert.showAndWait();
+                return;
+        
+                }
+
+        User user = new User("",username, password, city, contact, "");
 
         if (DatabaseHandler.addUser(user)) {
             Alert alert = new Alert(AlertType.INFORMATION);
@@ -176,24 +230,42 @@ public class HomeController {
 
         String username = nametextfield.getText();
         String password = passwordtextfield.getText();
+        String city = addressTextfield.getText();
+        String contact = contactTextfield.getText();
         
         username = username.trim();
         password = password.trim();
+        city = city.trim();
+        contact = contact.trim();
 
         if(username.length() == 0) {
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setContentText("Empty username");
-            alert.showAndWait();
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setContentText("Empty username");
+        alert.showAndWait();
     
-            }
+        }
     
-            if (password.length() == 0) {
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setContentText("Empty password");
-            alert.showAndWait();
+        if (password.length() == 0) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setContentText("Empty password");
+        alert.showAndWait();
     
-            }
-            User user = new User("",username, password, "");
+        }
+        
+        if (city.length() == 0) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setContentText("Empty City");
+        alert.showAndWait();
+        }
+
+        if (contact.length() == 0) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setContentText("Empty Contact");
+        alert.showAndWait();
+        
+        }
+        
+        User user = new User("",username, password, city, contact, "");
 
 
         if (DatabaseHandler.updateUser(user)) {
@@ -211,9 +283,19 @@ public class HomeController {
 
     }
 
+    @FXML
+    private void stockButton(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Stock.fxml"));
+        AnchorPane root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.centerOnScreen();
+        stage.show();
+
+
             
     }
     
 
 
-
+}

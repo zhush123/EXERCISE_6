@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="727.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WelcomeController">
+   <children>
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="470.0">
+         <children>
+            <MenuBar layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="28.0" prefWidth="470.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ImageView fitHeight="699.0" fitWidth="470.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Users/howar/Downloads/app/Home.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="homebutton" layoutX="31.0" layoutY="617.0" mnemonicParsing="false" onAction="#HomeButtonHandler" prefHeight="39.0" prefWidth="409.0" style="-fx-background-color: transparent;" />
+            <Text layoutX="31.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No account yet? Sign up here" underline="true" />
+            <Button fx:id="signupbutton" layoutX="31.0" layoutY="658.0" mnemonicParsing="false" onAction="#SignUpHandler" prefHeight="3.0" prefWidth="156.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="btncomingsoon" layoutX="37.0" layoutY="399.0" mnemonicParsing="false" onAction="#ComingSoonHandler" prefHeight="46.0" prefWidth="402.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="btncomingsoon" layoutX="37.0" layoutY="451.0" mnemonicParsing="false" onAction="#ComingSoonHandler" prefHeight="46.0" prefWidth="402.0" style="-fx-background-color: transparent;" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

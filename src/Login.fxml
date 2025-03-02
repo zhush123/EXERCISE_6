@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="390.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
   <children>
@@ -51,13 +52,18 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane prefHeight="365.0" prefWidth="296.0" style="-fx-background-color: #316cab;" VBox.vgrow="ALWAYS">
+    <AnchorPane prefHeight="365.0" prefWidth="296.0" VBox.vgrow="ALWAYS">
       <children>
             <TextField id="usernameTextField" fx:id="usernameTextField" layoutX="95.0" layoutY="148.0" />
             <TextField fx:id="passwordTextField" layoutX="95.0" layoutY="187.0" />
             <Label fx:id="usernameLabel" layoutX="27.0" layoutY="152.0" text="Username:" />
             <Label id="passwordLabel" fx:id="passwordLabel" layoutX="29.0" layoutY="191.0" text="Password:" />
             <Button fx:id="loginButton" layoutX="125.0" layoutY="250.0" mnemonicParsing="false" onAction="#loginbuttonHandler" text="Login" />
+            <AnchorPane prefHeight="81.0" prefWidth="296.0" style="-fx-background-color: #316cab;">
+               <children>
+                  <Text layoutX="109.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN LOGIN" />
+               </children>
+            </AnchorPane>
       </children>
     </AnchorPane>
   </children>
